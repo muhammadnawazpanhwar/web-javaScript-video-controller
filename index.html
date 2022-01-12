@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  
+    <div>
+        <button onclick="playvideo()" value="Play" type="button">Play video</button>
+        <button onclick="pausevideo()" value="Pause" type="button">pause video</button>
+        <button onclick="restartvideo()" value="restart" type="button">restart video</button>
+        <button id="fastFwd" onclick="skip(10)">Fast forward</button> 
+        <div style="text-align: center;">
+            <video  id="my video" width="320" height="240">
+                <source src="video.test.mp4" type="video/mp4"> 
+              </video>
+        </div>
+        <script>
+            var myVideo = document.getElementById("my video"); 
+            function playvideo(){
+                myVideo.play();
+            }
+            function pausevideo(){
+                myVideo.pause();
+            }
+            function restartvideo(){
+                myVideo.currentTime=0;
+            }
+            function fastvideo(){
+                myVideo.playbackrate=100;
+            }
+            function skip(value) {
+            var myvideo = document.getElementById("my video");
+            myvideo.currentTime += value;
+    }
+        </script>
+    </div>
+    
+</body>
+</html>
